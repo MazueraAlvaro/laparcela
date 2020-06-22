@@ -30,9 +30,16 @@ class ProductElements
             [
                 'unit'          => "gramo",
                 'sku'           => "MRCY1750",
-                'name'          => "Manzana Roja",
-                'description'   => "Manzana Roja",
+                'name'          => "Maracuya",
+                'description'   => "Maracuya",
                 'regularPrice'  => 1750/500,
+            ],
+            [
+                'unit'          => "gramo",
+                'sku'           => "MZNVRD4375",
+                'name'          => "Manzana Verde",
+                'description'   => "Manzana Verde",
+                'regularPrice'  => 4375/500,
             ],
             [
                 'unit'          => "bandeja",
@@ -466,6 +473,252 @@ class ProductElements
                 'description'   => "Repollo Morado",
                 'regularPrice'  => 1375/500,
             ],
+        ];
+    }
+
+    public static function getProductImages()
+    {
+        return [
+            [
+                "filename" => "aguacate_1.png",
+                "product" => "AGCTE3125"
+            ],
+            [
+                "filename" => "ajo_1.png",
+                "product" => "GRLC7500"
+            ],
+            [
+                "filename" => "apio_1.png",
+                "product" => "CLRY1250"
+            ],
+            [
+                "filename" => "arveja_1.png",
+                "product" => "ARVJ5000"
+            ],
+            [
+                "filename" => "banano_1.png",
+                "product" => "BNN1500"
+            ],
+            [
+                "filename" => "berenjena_1.png",
+                "product" => "BRNJN2250"
+            ],
+            [
+                "filename" => "brocoli_1.png",
+                "product" => "BRCL3125"
+            ],
+            [
+                "filename" => "calabacin_1.png",
+                "product" => "CLBCN2000"
+            ],
+            [
+                "filename" => "cebolla_cabezona_1.png",
+                "product" => "CBLCBZN2000"
+            ],
+            [
+                "filename" => "cebolla_larga_1.png",
+                "product" => "CBLLRG1875"
+            ],
+            [
+                "filename" => "cebolla_morada_1.png",
+                "product" => "CBLLMRD2375"
+            ],
+            [
+                "filename" => "champinon_1.png",
+                "product" => "MSHRMRM6250"
+            ],
+            [
+                "filename" => "coliflor_1.png",
+                "product" => "COLFLWR3125"
+            ],
+            [
+                "filename" => "curuba_1.jpg",
+                "product" => "CRBA1250"
+            ],
+            [
+                "filename" => "espinaca_1.png",
+                "product" => "SPNC1250"
+            ],
+            [
+                "filename" => "fresas_1.png",
+                "product" => "FRSS3750"
+            ],
+            [
+                "filename" => "frijol_verde_1.png",
+                "product" => "FJLVRD6500"
+            ],
+            [
+                "filename" => "granadilla_1.png",
+                "product" => "GRNDLL3750"
+            ],
+            [
+                "filename" => "guanabana_1.png",
+                "product" => "GNBN2104"
+            ],
+            [
+                "filename" => "guayaba_1.png",
+                "product" => "GYB1750"
+            ],
+            [
+                "filename" => "habichuela_1.png",
+                "product" => "HBCHL1500"
+            ],
+            [
+                "filename" => "jengibre_1.png",
+                "product" => "JGBR6250"
+            ],
+            [
+                "filename" => "kiwi_1.png",
+                "product" => "KWBJA7500"
+            ],
+            [
+                "filename" => "lechuga_1.png",
+                "product" => "LCHGBTV1125"
+            ],
+            [
+                "filename" => "limon2.png",
+                "product" => "LMNTHT875"
+            ],
+            [
+                "filename" => "lulo_1.jpg",
+                "product" => "LUL2125"
+            ],
+            [
+                "filename" => "mandarina_1.jpg",
+                "product" => "MNDRNAARYN1250"
+            ],
+            [
+                "filename" => "mango_1.png",
+                "product" => "MNGCMN1875"
+            ],
+            [
+                "filename" => "mango_1.png",
+                "product" => "MNGTMMY1750"
+            ],
+            [
+                "filename" => "manzana_1.jpg",
+                "product" => "MZNRJA4375"
+            ],
+            [
+                "filename" => "manzana_roja_1.png",
+                "product" => "MZNRJA4375"
+            ],
+            [
+                "filename" => "manzana_roja_2.jpg",
+                "product" => "MZNRJA4375"
+            ],
+            [
+                "filename" => "manzana_verde_1.png",
+                "product" => "MZNVRD4375"
+            ],
+            [
+                "filename" => "maracuya_1.jpg",
+                "product" => "MRCY1750"
+            ],
+            [
+                "filename" => "mazorca_comun_1.png",
+                "product" => "MZRC750"
+            ],
+            [
+                "filename" => "mazorca_dulce_1.png",
+                "product" => "CRNSWT1875"
+            ],
+            [
+                "filename" => "melon_1.jpg",
+                "product" => "MLN1875"
+            ],
+            [
+                "filename" => "melon_1.png",
+                "product" => "MLN1875"
+            ],
+            [
+                "filename" => "mora_1.png",
+                "product" => "MRA2500"
+            ],
+            [
+                "filename" => "naranja_1.png",
+                "product" => "NRJVLCIA875"
+            ],
+            [
+                "filename" => "papa_1.png",
+                "product" => "PPPRD1000"
+            ],
+            [
+                "filename" => "papaya_1.png",
+                "product" => "PPYA875"
+            ],
+            [
+                "filename" => "pepino_1.png",
+                "product" => "PPNO1000"
+            ],
+            [
+                "filename" => "pera_1.png",
+                "product" => "PRANAL875"
+            ],
+            [
+                "filename" => "pimenton_1.png",
+                "product" => "PMNTN1625"
+            ],
+            [
+                "filename" => "pina_1.png",
+                "product" => "PNAOM1250"
+            ],
+            [
+                "filename" => "pithaya_1.jpg",
+                "product" => "PNAOM1250"
+            ],
+            [
+                "filename" => "pithaya_1.png",
+                "product" => "PTHYA5000"
+            ],
+            [
+                "filename" => "platano_guayabo_1.png",
+                "product" => "PLTGYB1750"
+            ],
+            [
+                "filename" => "platano_maduro_1.png",
+                "product" => "PLTNMDR1250"
+            ],
+            [
+                "filename" => "platano_verde_1.png",
+                "product" => "PLTNVRD1125"
+            ],
+            [
+                "filename" => "remolacha_1.png",
+                "product" => "RMLCH875"
+            ],
+            [
+                "filename" => "repollo_1.png",
+                "product" => "RPLL1125"
+            ],
+            [
+                "filename" => "repollo_morado_1.png",
+                "product" => "RPLLMRD1375"
+            ],
+            [
+                "filename" => "sandia_1.png",
+                "product" => "SNDA875"
+            ],
+            [
+                "filename" => "tomate_chonto_1.png",
+                "product" => "TMTCHNT1500"
+            ],
+            [
+                "filename" => "tomate_de_arbol_1.png",
+                "product" => "TMTRBL2000"
+            ],
+            [
+                "filename" => "uva_1.png",
+                "product" => "USBL1875"
+            ],
+            [
+                "filename" => "yuca_1.png",
+                "product" => "YCA975"
+            ],
+            [
+                "filename" => "zanahoria_1.png",
+                "product" => "ZNHR1625"
+            ]
         ];
     }
 }

@@ -11,6 +11,13 @@ class ProductImageSeeder extends Seeder
      */
     public function run()
     {
-        //:wq
+        $images = ProductElements::getProductImages();
+        foreach ($images as $image){
+            $imageObj = new \App\Models\ProductImage();
+            $imageObj->file_name = $image["filename"];
+            $product = \App\Models\Product::where("sku", $image['product'])->first();
+            $imageObj->product()->associate($product);
+            $imageObj->save();
+        }
     }
 }
