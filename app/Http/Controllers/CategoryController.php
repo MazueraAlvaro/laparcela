@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Models\Category;
+use App\Http\Resources\CategoryResource;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -10,21 +11,11 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return CategoryResource::collection(Category::all());
     }
 
     /**
@@ -35,7 +26,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+           "name" => ["required", "max:100"],
+            "description" => ["required"]
+        ]);
+
     }
 
     /**
@@ -45,17 +40,6 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
     {
         //
     }
