@@ -1,5 +1,10 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Product;
+use App\Models\ProductStatus;
+use App\Models\Tag;
+use App\Models\Unit;
 use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
@@ -7,6 +12,8 @@ class ProductSeeder extends Seeder
     private $units;
     private $categories;
     private $activeStatus;
+    private $tags;
+
     /**
      * Run the database seeds.
      *
@@ -16,7 +23,7 @@ class ProductSeeder extends Seeder
     {
         $this->loadUnits();
         $this->loadCategories();
-
+        $this->loadTags();
         $this->seedProducts();
     }
 
@@ -24,26 +31,34 @@ class ProductSeeder extends Seeder
     {
         $fruits = ProductElements::getFruitProducts();
         foreach ($fruits as $fruit){
-            $this->createProduct($fruit['unit'], "fruits", $fruit['sku'], $fruit['name'], $fruit['description'], $fruit['regularPrice'], NULL);
+            $this->createProduct($fruit['tags'] ,$fruit['unit'], "fruits", $fruit['sku'], $fruit['name'], $fruit['description'], $fruit['regularPrice'], NULL);
         }
         $pulps = ProductElements::getPulpFruitProducts();
         foreach ($pulps as $pulp){
-            $this->createProduct($pulp['unit'], "pulps", $pulp['sku'], $pulp['name'], $pulp['description'], $pulp['regularPrice'], NULL);
+            $this->createProduct($pulp['tags'] ,$pulp['unit'], "pulps", $pulp['sku'], $pulp['name'], $pulp['description'], $pulp['regularPrice'], NULL);
         }
         $vegetables = ProductElements::getVegetableProducts();
         foreach ($vegetables as $vegetable){
-            $this->createProduct($vegetable['unit'], "vegetables", $vegetable['sku'], $vegetable['name'], $vegetable['description'], $vegetable['regularPrice'], NULL);
+            $this->createProduct($vegetable['tags'] ,$vegetable['unit'], "vegetables", $vegetable['sku'], $vegetable['name'], $vegetable['description'], $vegetable['regularPrice'], NULL);
         }
     }
 
 
 
-    private function createProduct($unit, $category, $sku, $name, $description, $regularPrice, $discountPrice = null, $taxable = false)
+    private function createProduct($tags, $unit, $category, $sku, $name, $description, $regularPrice, $discountPrice = null, $taxable = false)
     {
+        if(!isset($this->units[$unit]))
+            return false;
         $product = $this->makeProduct($sku, $name, $description, $regularPrice, $discountPrice, $taxable);
         $product->unit()->associate($this->units[$unit]);
         $product->save();
-        $product->categories()->attach($this->categories[$category]);
+        if(isset($this->categories[$category]))
+            $product->categories()->attach($this->categories[$category]);
+        foreach ($tags as $tag){
+            if(isset($this->tags[$tag])){
+                $product->tags()->attach($this->tags[$tag]);
+            }
+        }
     }
 
     /**
@@ -53,12 +68,12 @@ class ProductSeeder extends Seeder
      * @param $regularPrice
      * @param $discountPrice
      * @param bool $taxable
-     * @return \App\Models\Product
+     * @return Product
      */
     private function makeProduct($sku, $name, $description, $regularPrice, $discountPrice, $taxable = false)
     {
-        $this->activeStatus = is_null($this->activeStatus) ? \App\Models\ProductStatus::where("rendering", "success")->first() : $this->activeStatus;
-        $product = \App\Models\Product::make([
+        $this->activeStatus = is_null($this->activeStatus) ? ProductStatus::where("rendering", "success")->first() : $this->activeStatus;
+        $product = Product::make([
             'sku' => $sku,
             'name' => $name,
             'description' => $description,
@@ -72,7 +87,7 @@ class ProductSeeder extends Seeder
 
     private function loadUnits()
     {
-        $units = \App\Models\Unit::all();
+        $units = Unit::all();
         foreach ($units  as $unit){
             $this->units[$unit->code] = $unit;
         }
@@ -80,9 +95,17 @@ class ProductSeeder extends Seeder
 
     private function loadCategories()
     {
-        $categories = \App\Models\Category::all();
+        $categories = Category::all();
         foreach ($categories  as $category){
             $this->categories[$category->code] = $category;
+        }
+    }
+
+    private function loadTags()
+    {
+        $tags = Tag::all();
+        foreach ($tags  as $tag){
+            $this->tags[$tag->name] = $tag;
         }
     }
 }

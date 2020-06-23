@@ -19,5 +19,17 @@ class TagSeeder extends Seeder
             "name" => "ensalada"
         ]);
 
+        \App\Models\Tag::create([
+            "name" => "tuberculo"
+        ]);
+
+        \App\Models\Tag::create([
+            "name" => "jugo-pulpa"
+        ]);
+
+        \App\Models\Tag::create([
+            "name" => "pepas"
+        ]);
+
     }
 }

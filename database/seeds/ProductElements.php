@@ -12,6 +12,7 @@ class ProductElements
                 'name'          => "Mango Común",
                 'description'   => "Mango pa jugo",
                 'regularPrice'  => 3.75,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -19,6 +20,7 @@ class ProductElements
                 'name'          => "Mango Tommy",
                 'description'   => "Mango maduro pa comer",
                 'regularPrice'  => 1750/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -26,6 +28,7 @@ class ProductElements
                 'name'          => "Manzana Roja",
                 'description'   => "Manzana Roja",
                 'regularPrice'  => 4375/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -33,6 +36,7 @@ class ProductElements
                 'name'          => "Maracuya",
                 'description'   => "Maracuya",
                 'regularPrice'  => 1750/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -40,6 +44,7 @@ class ProductElements
                 'name'          => "Manzana Verde",
                 'description'   => "Manzana Verde",
                 'regularPrice'  => 4375/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "bandeja",
@@ -47,6 +52,7 @@ class ProductElements
                 'name'          => "Fresa",
                 'description'   => "Fresa en bandeja",
                 'regularPrice'  => 3750,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -54,6 +60,7 @@ class ProductElements
                 'name'          => "Guayaba",
                 'description'   => "Guayaba",
                 'regularPrice'  => 1750/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -61,6 +68,7 @@ class ProductElements
                 'name'          => "Granadilla",
                 'description'   => "Granadilla",
                 'regularPrice'  => 3750/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -68,6 +76,7 @@ class ProductElements
                 'name'          => "Banano",
                 'description'   => "Banano",
                 'regularPrice'  => 1500/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -75,6 +84,7 @@ class ProductElements
                 'name'          => "Guanabana",
                 'description'   => "Guanabana",
                 'regularPrice'  => 2104/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -82,6 +92,7 @@ class ProductElements
                 'name'          => "Papaya",
                 'description'   => "Papaya",
                 'regularPrice'  => 875/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -89,6 +100,7 @@ class ProductElements
                 'name'          => "Tomate Árbol",
                 'description'   => "Tomate Árbol",
                 'regularPrice'  => 2000/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -96,6 +108,7 @@ class ProductElements
                 'name'          => "Piña Oro Miel",
                 'description'   => "Piña Oro Miel",
                 'regularPrice'  => 2000/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "bandeja",
@@ -103,6 +116,7 @@ class ProductElements
                 'name'          => "Uva Isabel",
                 'description'   => "Uva Isabel",
                 'regularPrice'  => 1875,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -110,6 +124,7 @@ class ProductElements
                 'name'          => "Limón Tahití",
                 'description'   => "Limón Tahití",
                 'regularPrice'  => 2000/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -117,6 +132,7 @@ class ProductElements
                 'name'          => "Curuba",
                 'description'   => "Curuba",
                 'regularPrice'  => 1250/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -124,6 +140,7 @@ class ProductElements
                 'name'          => "Aguacate",
                 'description'   => "Aguacate",
                 'regularPrice'  => 3125/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -131,6 +148,7 @@ class ProductElements
                 'name'          => "Melón",
                 'description'   => "Melón",
                 'regularPrice'  => 1875/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -138,6 +156,7 @@ class ProductElements
                 'name'          => "Lulo",
                 'description'   => "Lulo",
                 'regularPrice'  => 2000/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -145,6 +164,7 @@ class ProductElements
                 'name'          => "Naranja Valencia",
                 'description'   => "Naranja Valencia",
                 'regularPrice'  => 875/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -152,6 +172,7 @@ class ProductElements
                 'name'          => "Mandarina Arayana",
                 'description'   => "Mandarina Arayana",
                 'regularPrice'  => 1250/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -159,6 +180,7 @@ class ProductElements
                 'name'          => "Pithaya",
                 'description'   => "Pithaya",
                 'regularPrice'  => 5000/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -166,6 +188,7 @@ class ProductElements
                 'name'          => "Mora",
                 'description'   => "Mora",
                 'regularPrice'  => 2500/500,
+                'tags'          => ['jugo']
             ],
             [
                 'unit'          => "gramo",
@@ -173,6 +196,7 @@ class ProductElements
                 'name'          => "Sandia",
                 'description'   => "Sandia",
                 'regularPrice'  => 875/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "bandeja",
@@ -180,13 +204,15 @@ class ProductElements
                 'name'          => "Kiwi",
                 'description'   => "Kiwi",
                 'regularPrice'  => 7500,
+                'tags'          => []
             ],
             [
-                'unit'          => "bandeja",
+                'unit'          => "gramo",
                 'sku'           => "PRANAL875",
                 'name'          => "Pera Nacional",
                 'description'   => "Pera Nacional",
                 'regularPrice'  => 875/500,
+                'tags'          => []
             ],
         ];
     }
@@ -200,6 +226,7 @@ class ProductElements
                 'name'          => "Pulpa Uva",
                 'description'   => "Pulpa de uva",
                 'regularPrice'  => 2640,
+                'tags'          => ['jugo-pulpa']
             ],
             [
                 'unit'          => "libra",
@@ -207,6 +234,7 @@ class ProductElements
                 'name'          => "Pulpa Maracuya",
                 'description'   => "Pulpa de maracuya",
                 'regularPrice'  => 4200,
+                'tags'          => ['jugo-pulpa']
             ],
             [
                 'unit'          => "libra",
@@ -214,6 +242,7 @@ class ProductElements
                 'name'          => "Pulpa Lulo",
                 'description'   => "Pulpa de lulo",
                 'regularPrice'  => 3600,
+                'tags'          => ['jugo-pulpa']
             ],
             [
                 'unit'          => "libra",
@@ -221,6 +250,7 @@ class ProductElements
                 'name'          => "Pulpa Mango",
                 'description'   => "Pulpa de mango",
                 'regularPrice'  => 3000,
+                'tags'          => ['jugo-pulpa']
             ],
             [
                 'unit'          => "bandeja",
@@ -228,6 +258,7 @@ class ProductElements
                 'name'          => "Pulpa Guanabana",
                 'description'   => "Pulpa de guanabana",
                 'regularPrice'  => 3120,
+                'tags'          => ['jugo-pulpa']
             ],
         ];
     }
@@ -241,6 +272,7 @@ class ProductElements
                 'name'          => "Mazorca Común",
                 'description'   => "Mazorca común",
                 'regularPrice'  => 750,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -248,6 +280,7 @@ class ProductElements
                 'name'          => "Papa Amarilla",
                 'description'   => "Papa amarilla",
                 'regularPrice'  => 1725/500,
+                'tags'          => ['tuberculo']
             ],
             [
                 'unit'          => "gramo",
@@ -255,6 +288,7 @@ class ProductElements
                 'name'          => "Platano Verde",
                 'description'   => "Platano Verde",
                 'regularPrice'  => 1125/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -262,6 +296,7 @@ class ProductElements
                 'name'          => "Papa Parda",
                 'description'   => "Papa Parda",
                 'regularPrice'  => 1000/500,
+                'tags'          => ['tuberculo']
             ],
             [
                 'unit'          => "gramo",
@@ -269,13 +304,15 @@ class ProductElements
                 'name'          => "Apio",
                 'description'   => "Apio",
                 'regularPrice'  => 1250/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
                 'sku'           => "BRCL3125",
-                'name'          => "Brocolo",
-                'description'   => "Brocolo",
+                'name'          => "Brocoli",
+                'description'   => "Brocoli",
                 'regularPrice'  => 3125/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -283,6 +320,7 @@ class ProductElements
                 'name'          => "Espinaca",
                 'description'   => "Espinaca",
                 'regularPrice'  => 1250/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -290,6 +328,7 @@ class ProductElements
                 'name'          => "Calabacin",
                 'description'   => "Calabacin",
                 'regularPrice'  => 2000/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -297,6 +336,7 @@ class ProductElements
                 'name'          => "Cebolla Larga",
                 'description'   => "Cebolla Larga",
                 'regularPrice'  => 1875/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -304,6 +344,7 @@ class ProductElements
                 'name'          => "Pepino",
                 'description'   => "Pepino",
                 'regularPrice'  => 1000/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -311,6 +352,7 @@ class ProductElements
                 'name'          => "Cebolla Cabezona",
                 'description'   => "Cebolla Cabezona",
                 'regularPrice'  => 2000/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -318,6 +360,7 @@ class ProductElements
                 'name'          => "Pimentón",
                 'description'   => "Pimentón",
                 'regularPrice'  => 1625/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -325,6 +368,7 @@ class ProductElements
                 'name'          => "Cebolla Cabezona Morada",
                 'description'   => "Cebolla Cabezona Morada",
                 'regularPrice'  => 2375/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -332,6 +376,7 @@ class ProductElements
                 'name'          => "Ajo",
                 'description'   => "Ajo",
                 'regularPrice'  => 7500/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -339,6 +384,7 @@ class ProductElements
                 'name'          => "Frijol Verde",
                 'description'   => "Frijol Verde",
                 'regularPrice'  => 6500/500,
+                'tags'          => ['pepas']
             ],
             [
                 'unit'          => "gramo",
@@ -346,6 +392,7 @@ class ProductElements
                 'name'          => "Arracacha",
                 'description'   => "Arracacha",
                 'regularPrice'  => 1500/500,
+                'tags'          => ['tuberculo']
             ],
             [
                 'unit'          => "gramo",
@@ -353,6 +400,7 @@ class ProductElements
                 'name'          => "Champiñón",
                 'description'   => "Champiñón",
                 'regularPrice'  => 6250/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -360,6 +408,7 @@ class ProductElements
                 'name'          => "Arveja",
                 'description'   => "Arveja",
                 'regularPrice'  => 5000/500,
+                'tags'          => ['pepas']
             ],
             [
                 'unit'          => "gramo",
@@ -367,6 +416,7 @@ class ProductElements
                 'name'          => "Habichuela",
                 'description'   => "Habichuela",
                 'regularPrice'  => 1500/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -374,6 +424,7 @@ class ProductElements
                 'name'          => "Lechuga Batavia",
                 'description'   => "Lechuga Batavia",
                 'regularPrice'  => 1125/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -381,6 +432,7 @@ class ProductElements
                 'name'          => "Colifor",
                 'description'   => "Colifor",
                 'regularPrice'  => 3125/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "paquete",
@@ -388,6 +440,7 @@ class ProductElements
                 'name'          => "Olluco",
                 'description'   => "Olluco",
                 'regularPrice'  => 4000,
+                'tags'          => ['tuberculo']
             ],
             [
                 'unit'          => "bandeja",
@@ -395,6 +448,7 @@ class ProductElements
                 'name'          => "Maiz Dulce",
                 'description'   => "Maiz Dulce",
                 'regularPrice'  => 1875,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -402,6 +456,7 @@ class ProductElements
                 'name'          => "Yuca",
                 'description'   => "Yuca",
                 'regularPrice'  => 975/500,
+                'tags'          => ['tuberculo']
             ],
             [
                 'unit'          => "gramo",
@@ -409,6 +464,7 @@ class ProductElements
                 'name'          => "Guineo",
                 'description'   => "Guineo",
                 'regularPrice'  => 1125/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -416,6 +472,7 @@ class ProductElements
                 'name'          => "Platano Guayabo",
                 'description'   => "Platano Guayabo",
                 'regularPrice'  => 1750/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -423,6 +480,7 @@ class ProductElements
                 'name'          => "Jengibre",
                 'description'   => "Jengibre",
                 'regularPrice'  => 6250/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -430,6 +488,7 @@ class ProductElements
                 'name'          => "Berenjena",
                 'description'   => "Berenjena",
                 'regularPrice'  => 2250/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -437,6 +496,7 @@ class ProductElements
                 'name'          => "Platano Maduro",
                 'description'   => "Platano Maduro",
                 'regularPrice'  => 1250/500,
+                'tags'          => []
             ],
             [
                 'unit'          => "gramo",
@@ -444,6 +504,7 @@ class ProductElements
                 'name'          => "Remolacha",
                 'description'   => "Remolacha",
                 'regularPrice'  => 875/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -451,6 +512,7 @@ class ProductElements
                 'name'          => "Tomate Chonto",
                 'description'   => "Tomate Chonto",
                 'regularPrice'  => 1500/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -458,6 +520,7 @@ class ProductElements
                 'name'          => "Repollo",
                 'description'   => "Repollo",
                 'regularPrice'  => 1125/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -465,6 +528,7 @@ class ProductElements
                 'name'          => "Zanahoria",
                 'description'   => "Zanahoria",
                 'regularPrice'  => 1625/500,
+                'tags'          => ['ensalada']
             ],
             [
                 'unit'          => "gramo",
@@ -472,6 +536,7 @@ class ProductElements
                 'name'          => "Repollo Morado",
                 'description'   => "Repollo Morado",
                 'regularPrice'  => 1375/500,
+                'tags'          => ['ensalada']
             ],
         ];
     }
