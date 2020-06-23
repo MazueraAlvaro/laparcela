@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->float("regular_price");
             $table->float("discount_price")->nullable();
             $table->boolean("taxable");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

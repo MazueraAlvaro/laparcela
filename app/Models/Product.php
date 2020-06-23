@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Product
  * @package App\Models
+ * @property integer id
  * @property string sku
  * @property string name
  * @property string description
@@ -19,6 +21,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ["sku", "name", "description", "regular_price", "discount_price", "taxable"];
 
     protected $casts = [

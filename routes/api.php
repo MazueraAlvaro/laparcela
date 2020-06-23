@@ -14,4 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource("category", "CategoryController");
+Route::apiResource("category", "CategoryController")->names([
+    'index' => 'category.index',
+    'store' => 'category.store',
+    'update' => 'category.update',
+]);
+Route::get("/category/{id}/products", "CategoryController@products")->name("category.products");
+
+Route::apiResource("product", "ProductController")->names([
+    'index' => 'product.index',
+    'store' => 'product.store',
+    'update' => 'product.update',
+]);
+Route::get("product/search/{term}", "ProductController@search")->name("product.search");
