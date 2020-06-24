@@ -14,16 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource("category", "CategoryController")->names([
-    'index' => 'category.index',
-    'store' => 'category.store',
-    'update' => 'category.update',
-]);
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+});
+
+Route::apiResource("category", "CategoryController");
 Route::get("/category/{id}/products", "CategoryController@products")->name("category.products");
 
-Route::apiResource("product", "ProductController")->names([
-    'index' => 'product.index',
-    'store' => 'product.store',
-    'update' => 'product.update',
-]);
+Route::apiResource("product", "ProductController");
 Route::get("product/search/{term}", "ProductController@search")->name("product.search");

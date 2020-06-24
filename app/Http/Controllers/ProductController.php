@@ -14,6 +14,10 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index', 'show', "search"]]);
+    }
     /**
      * Display a listing of the resource.
      *
