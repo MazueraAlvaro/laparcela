@@ -21,7 +21,7 @@ Route::group([
     Route::post('login', 'AuthController@login');
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
-    Route::post('me', 'AuthController@me');
+    Route::get('me', 'AuthController@me');
 });
 
 Route::apiResource("category", "CategoryController");
@@ -29,3 +29,6 @@ Route::get("/category/{id}/products", "CategoryController@products")->name("cate
 
 Route::apiResource("product", "ProductController");
 Route::get("product/search/{term}", "ProductController@search")->name("product.search");
+
+Route::apiResource("order", "OrderController");
+Route::get("order/sessionOrder", "OrderController@getOrder");
