@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\OrderResource;
+use App\Http\Resources\ShoppingCartResource;
+use App\Repositories\ShoppingCartRepository;
 use App\ShoppingCart;
 use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param ShoppingCartRepository $shoppingCartRepository
+     * @return ShoppingCartResource
      */
-    public function index()
+    public function index(ShoppingCartRepository $shoppingCartRepository)
     {
-        //
+        $shoppingCart = $shoppingCartRepository->get();
+        return new ShoppingCartResource($shoppingCart);
     }
 
     /**

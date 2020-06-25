@@ -28,8 +28,8 @@ class CreateProductShoppingCartTable extends Migration
     public function down()
     {
         Schema::table('product_shopping_cart', function (Blueprint $table) {
-            $table->dropForeign("product_id");
-            $table->dropForeign("shopping_cart_id");
+            $table->dropForeign(["product_id"]);
+            $table->dropForeign(["shopping_cart_id"]);
         });
         Schema::dropIfExists('product_shopping_cart');
     }
