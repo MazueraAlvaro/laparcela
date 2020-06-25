@@ -16,10 +16,11 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->foreignId("session_id")->constrained();
-            $table->foreignId("user_id")->constrained()->nullable();
-            $table->foreignId("payment_id")->constrained()->nullable();
-            $table->date("date");
-            $table->integer("total");
+            $table->foreignId("user_id")->nullable()->constrained();
+            $table->foreignId("payment_id")->nullable()->constrained();
+            $table->date("date")->nullable();
+            $table->float("total");
+            $table->boolean("closed")->default(false);
             $table->timestamps();
         });
     }
