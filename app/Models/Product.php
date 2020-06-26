@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string description
  * @property integer regular_price
  * @property integer discount_price
+ * @property integer actual_price
  * @property boolean taxable
  * @property Unit unit
  * @property ProductStatus status
@@ -52,5 +53,17 @@ class Product extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function getActualPriceAttribute()
+    {
+        return (!is_null($this->discount_price) and $this->discount_price < $this->regular_price)
+            ? $this->discount_price
+            : $this->regular_price;
+    }
+
+    public function getTotalPrice($quantity)
+    {
+        return $this->actual_price * $quantity;
     }
 }

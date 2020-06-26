@@ -16,7 +16,7 @@ class ShoppingCartResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "products" => $this->whenLoaded("products")
+            "products" => $this->whenLoaded("products", ProductShoppingCartResource::collection($this->products))
         ];
     }
 }

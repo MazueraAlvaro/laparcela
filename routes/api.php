@@ -34,5 +34,6 @@ Route::apiResource("order", "OrderController");
 Route::get("order/{order}/products", "OrderController@products");
 
 Route::apiResource("orderProduct", "OrderProductController")->except(['index']);
-
-Route::get("shoppingCart", "ShoppingCartController@index")->name("shoppingCart.index");
+//
+Route::get("shoppingCart", "ShoppingCartController@cart")->name("shoppingCart.cart");
+Route::apiResource("shoppingCart.products", "ShoppingCartController");

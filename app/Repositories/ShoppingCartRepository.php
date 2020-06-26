@@ -26,9 +26,13 @@ class ShoppingCartRepository
         return $session;
     }
 
-    public function isMyShoppingCart($shoppingCartId)
+    public function isMyShoppingCart($shoppingCart)
     {
+        if($shoppingCart instanceof ShoppingCart)
+            $shoppingCartId = $shoppingCart->id;
+        else
+            $shoppingCartId = (int) $shoppingCart;
         $session = $this->getSession();
-        return $session->shoppingCart->id === $shoppingCartId;
+        return $session->shoppingCart->id === (int) $shoppingCartId;
     }
 }

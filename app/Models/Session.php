@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
  * @property string data
  * @property Order[} orders
+ * @property ShoppingCart shoppingCart
  */
 class Session extends Model
 {
@@ -17,5 +18,10 @@ class Session extends Model
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function shoppingCart()
+    {
+        return $this->hasOne(ShoppingCart::class);
     }
 }

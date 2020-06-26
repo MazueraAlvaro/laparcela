@@ -2,87 +2,78 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddProductCartRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Http\Resources\OrderResource;
+use App\Http\Resources\ProductResource;
+use App\Http\Resources\ProductShoppingCartResource;
 use App\Http\Resources\ShoppingCartResource;
+use App\Models\Product;
 use App\Repositories\ShoppingCartRepository;
-use App\ShoppingCart;
+use App\Models\ShoppingCart;
+use Illuminate\Contracts\Queue\EntityNotFoundException;
+use Illuminate\Database\Eloquent\RelationNotFoundException;
 use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
 {
-    /**
-     * @param ShoppingCartRepository $shoppingCartRepository
-     * @return ShoppingCartResource
-     */
-    public function index(ShoppingCartRepository $shoppingCartRepository)
+    private $shoppingCartRepository;
+
+    public function __construct(ShoppingCartRepository $shoppingCartRepository)
     {
-        $shoppingCart = $shoppingCartRepository->get();
+        $this->shoppingCartRepository = $shoppingCartRepository;
+    }
+
+    function cart()
+    {
+        $shoppingCart = $this->shoppingCartRepository->get();
         return new ShoppingCartResource($shoppingCart);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    function index(ShoppingCart $shoppingCart)
     {
-        //
+        $products = $shoppingCart->products;
+        return ProductShoppingCartResource::collection($products);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(AddProductCartRequest $request)
     {
-        //
+        $sCart = $this->shoppingCartRepository->get();
+        $sCart->products()->attach(
+            $request->get("product_id"),
+            [
+                "quantity" => $request->get("quantity")
+            ]
+        );
+        return new ProductShoppingCartResource($sCart->products()->find($request->get("product_id")));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ShoppingCart  $shoppingCart
-     * @return \Illuminate\Http\Response
-     */
     public function show(ShoppingCart $shoppingCart)
     {
-        //
+        $shoppingCart = $this->shoppingCartRepository->get();
+        return new ShoppingCartResource($shoppingCart);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\ShoppingCart  $shoppingCart
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ShoppingCart $shoppingCart)
+    public function update(UpdateProductRequest $request, ShoppingCart $shoppingCart, Product $product)
     {
-        //
+        $cartProduct = $this->validateProductOnMyCart($shoppingCart, $product);
+        $newQuantity = ((float) $request->get("quantity")) + $cartProduct->cartProduct->quantity;
+        $shoppingCart->products()->updateExistingPivot($product->id, ["quantity" => $newQuantity]);
+        return new ProductShoppingCartResource($shoppingCart->products()->find($product->id));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ShoppingCart  $shoppingCart
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ShoppingCart $shoppingCart)
+    public function destroy(ShoppingCart $shoppingCart, Product $product)
     {
-        //
+        $this->validateProductOnMyCart($shoppingCart, $product);
+        $shoppingCart->products()->detach($product);
+        return response()->json(["data" => true]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\ShoppingCart  $shoppingCart
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ShoppingCart $shoppingCart)
+    private function validateProductOnMyCart(ShoppingCart $shoppingCart, Product $product)
     {
-        //
+        $cartProduct = $shoppingCart->products->find($product->id);
+        if(!$cartProduct)
+            throw new RelationNotFoundException("Product with id $product->id not found in Shopping Cart products");
+        return $cartProduct;
     }
 }
