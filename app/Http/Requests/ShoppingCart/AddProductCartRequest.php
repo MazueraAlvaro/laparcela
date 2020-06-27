@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\ShoppingCart;
 
 use App\Models\Product;
 use App\Repositories\ShoppingCartRepository;

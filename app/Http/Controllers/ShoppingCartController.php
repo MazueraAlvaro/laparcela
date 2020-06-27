@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AddProductCartRequest;
-use App\Http\Requests\UpdateProductRequest;
-use App\Http\Resources\OrderResource;
-use App\Http\Resources\ProductResource;
+use App\Http\Requests\ShoppingCart\AddProductCartRequest;
+use App\Http\Requests\ShoppingCart\UpdateProductRequest;
 use App\Http\Resources\ProductShoppingCartResource;
 use App\Http\Resources\ShoppingCartResource;
 use App\Models\Product;
 use App\Repositories\ShoppingCartRepository;
 use App\Models\ShoppingCart;
-use Illuminate\Contracts\Queue\EntityNotFoundException;
 use Illuminate\Database\Eloquent\RelationNotFoundException;
-use Illuminate\Http\Request;
 
 class ShoppingCartController extends Controller
 {
@@ -39,12 +35,23 @@ class ShoppingCartController extends Controller
     public function store(AddProductCartRequest $request)
     {
         $sCart = $this->shoppingCartRepository->get();
-        $sCart->products()->attach(
-            $request->get("product_id"),
-            [
-                "quantity" => $request->get("quantity")
-            ]
-        );
+        $cartProduct = $sCart->products()->find($request->get("product_id"));
+        if($cartProduct){
+            $sCart->products()->updateExistingPivot(
+                $request->get("product_id"),
+                [
+                    "quantity" => $cartProduct->cartProduct->quantity + $request->get("quantity")
+                ]
+            );
+        }
+        else {
+            $sCart->products()->attach(
+                $request->get("product_id"),
+                [
+                    "quantity" => $request->get("quantity")
+                ]
+            );
+        }
         return new ProductShoppingCartResource($sCart->products()->find($request->get("product_id")));
     }
 
