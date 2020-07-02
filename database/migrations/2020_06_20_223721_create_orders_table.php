@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->foreignId("session_id")->constrained();
             $table->foreignId("user_id")->nullable()->constrained();
             $table->foreignId("payment_id")->nullable()->constrained();
+            $table->integer("number")->unsigned();
             $table->date("date")->nullable();
             $table->float("total");
             $table->boolean("closed")->default(false);

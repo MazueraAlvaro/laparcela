@@ -19,7 +19,7 @@ class CreateOrderProductsTable extends Migration
             $table->string("sku", 100);
             $table->string("name", 100);
             $table->text("description")->nullable();
-            $table->integer("price");
+            $table->float("price");
             $table->integer("quantity");
             $table->float("subtotal");
         });

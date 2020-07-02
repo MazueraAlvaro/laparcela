@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string description
  * @property integer price
  * @property integer quantity
- * @property integer total
+ * @property float subtotal
  */
 class OrderProduct extends Model
 {
@@ -21,5 +21,11 @@ class OrderProduct extends Model
     public function order()
     {
         return $this->belongsTo(Order::class);
+    }
+
+    public function calcSubtotal()
+    {
+        $this->subtotal = $this->quantity * $this->price;
+        return $this->subtotal;
     }
 }

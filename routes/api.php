@@ -30,10 +30,11 @@ Route::get("/category/{id}/products", "CategoryController@products")->name("cate
 Route::apiResource("product", "ProductController");
 Route::get("product/search/{term}", "ProductController@search")->name("product.search");
 
-Route::apiResource("order", "OrderController");
-Route::get("order/{order}/products", "OrderController@products");
+Route::apiResource("order", "OrderController")->only(["show", "index"]);
+Route::post("order/fromCart", "OrderController@storeFromCart");
 
 Route::apiResource("orderProduct", "OrderProductController")->except(['index']);
 //
 Route::get("shoppingCart", "ShoppingCartController@cart")->name("shoppingCart.cart");
 Route::apiResource("shoppingCart.products", "ShoppingCartController");
+

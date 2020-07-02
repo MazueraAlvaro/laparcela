@@ -8,14 +8,19 @@ use Illuminate\Database\Eloquent\Model;
  * Class Order
  * @package App\Models
  * @property \DateTime date
- * @property integer total
+ * @property float total
+ * @property integer number
  * @property User user
  * @property Session session
  * @property Payment payment
  */
 class Order extends Model
 {
-    protected $fillable = ["date", "total"];
+    protected $fillable = ["date", "total", "number"];
+
+    protected $casts = [
+        "date" => "date"
+    ];
 
     public function user()
     {
@@ -30,5 +35,10 @@ class Order extends Model
     public function payment()
     {
         return $this->belongsTo(Payment::class);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(OrderProduct::class);
     }
 }
