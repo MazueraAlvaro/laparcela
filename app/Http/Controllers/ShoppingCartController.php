@@ -9,7 +9,7 @@ use App\Http\Resources\ShoppingCartResource;
 use App\Models\Product;
 use App\Repositories\ShoppingCartRepository;
 use App\Models\ShoppingCart;
-use Illuminate\Database\Eloquent\RelationNotFoundException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ShoppingCartController extends Controller
 {
@@ -80,7 +80,7 @@ class ShoppingCartController extends Controller
     {
         $cartProduct = $shoppingCart->products->find($product->id);
         if(!$cartProduct)
-            throw new RelationNotFoundException("Product with id $product->id not found in Shopping Cart products");
+            throw new NotFoundHttpException("Product with id $product->id not found in Shopping Cart products");
         return $cartProduct;
     }
 }

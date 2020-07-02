@@ -17,13 +17,7 @@ class ShoppingCartRepository
 
     private function getSession()
     {
-        $session_id = session("session_id");
-        if(!$session_id or ! $session = Session::with("shoppingCart")->find($session_id)){
-            $session = Session::create(['data' => '']);
-            session(["session_id" => $session->id]);
-            $session->shoppingCart()->save(new ShoppingCart());
-        }
-        return $session;
+        return activeSession(["shoppingCart"], true);
     }
 
     public function isMyShoppingCart($shoppingCart)
