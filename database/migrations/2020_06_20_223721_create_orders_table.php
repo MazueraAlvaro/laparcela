@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->foreignId("payment_id")->nullable()->constrained();
             $table->integer("number")->unsigned();
             $table->date("date")->nullable();
+            $table->float("subtotal");
             $table->float("total");
             $table->boolean("closed")->default(false);
             $table->timestamps();

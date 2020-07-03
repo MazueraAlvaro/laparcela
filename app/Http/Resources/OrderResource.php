@@ -17,9 +17,11 @@ class OrderResource extends JsonResource
         return [
             "id" => $this->id,
             "total" => $this->total,
+            "subtotal" => $this->subtotal,
             "date" => $this->date->locale("es_CO")->isoFormat("LL"),
             "number" => str_pad($this->number, 8, "0", STR_PAD_LEFT),
             "products" => $this->whenLoaded("products", OrderProductResource::collection($this->products)),
+            "details" => $this->whenLoaded("detail")
         ];
     }
 }
