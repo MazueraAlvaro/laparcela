@@ -13,10 +13,17 @@ use Illuminate\Database\Eloquent\Model;
 class ShoppingCart extends Model
 {
 
-    protected $with = ["products"];
+    protected $with = ["products", "products.images", "products.unit"];
 
     public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot("quantity")->as("cartProduct");
+    }
+
+    public function getTotalAttribute()
+    {
+        return $this->products->reduce(function ($total, $product){
+            return $product->getTotalPrice($product->cartProduct->quantity) + $total;
+        }, 0);
     }
 }

@@ -63,10 +63,10 @@ class ShoppingCartController extends Controller
 
     public function update(UpdateProductRequest $request, ShoppingCart $shoppingCart, Product $product)
     {
-        $cartProduct = $this->validateProductOnMyCart($shoppingCart, $product);
-        $newQuantity = ((float) $request->get("quantity")) + $cartProduct->cartProduct->quantity;
+        $this->validateProductOnMyCart($shoppingCart, $product);
+        $newQuantity = ((float) $request->get("quantity"));
         $shoppingCart->products()->updateExistingPivot($product->id, ["quantity" => $newQuantity]);
-        return new ProductShoppingCartResource($shoppingCart->products()->find($product->id));
+        return new ProductShoppingCartResource($shoppingCart->products()->with(["images", "unit"])->find($product->id));
     }
 
     public function destroy(ShoppingCart $shoppingCart, Product $product)

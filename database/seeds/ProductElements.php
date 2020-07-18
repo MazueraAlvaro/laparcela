@@ -545,55 +545,55 @@ class ProductElements
     {
         return [
             [
-                "filename" => "aguacate_1.png",
+                "filename" => "aguacate_1.jpg",
                 "product" => "AGCTE3125"
             ],
             [
-                "filename" => "ajo_1.png",
+                "filename" => "ajo_1.jpg",
                 "product" => "GRLC7500"
             ],
             [
-                "filename" => "apio_1.png",
+                "filename" => "apio_1.jpg",
                 "product" => "CLRY1250"
             ],
             [
-                "filename" => "arveja_1.png",
+                "filename" => "arveja_1.jpg",
                 "product" => "ARVJ5000"
             ],
             [
-                "filename" => "banano_1.png",
+                "filename" => "banano_1.jpg",
                 "product" => "BNN1500"
             ],
             [
-                "filename" => "berenjena_1.png",
+                "filename" => "berenjena_1.jpg",
                 "product" => "BRNJN2250"
             ],
             [
-                "filename" => "brocoli_1.png",
+                "filename" => "brocoli_1.jpg",
                 "product" => "BRCL3125"
             ],
             [
-                "filename" => "calabacin_1.png",
+                "filename" => "calabacin_1.jpg",
                 "product" => "CLBCN2000"
             ],
             [
-                "filename" => "cebolla_cabezona_1.png",
+                "filename" => "cebolla_cabezona_1.jpg",
                 "product" => "CBLCBZN2000"
             ],
             [
-                "filename" => "cebolla_larga_1.png",
+                "filename" => "cebolla_larga_1.jpg",
                 "product" => "CBLLRG1875"
             ],
             [
-                "filename" => "cebolla_morada_1.png",
+                "filename" => "cebolla_morada_1.jpg",
                 "product" => "CBLLMRD2375"
             ],
             [
-                "filename" => "champinon_1.png",
+                "filename" => "champinon_1.jpg",
                 "product" => "MSHRMRM6250"
             ],
             [
-                "filename" => "coliflor_1.png",
+                "filename" => "coliflor_1.jpg",
                 "product" => "COLFLWR3125"
             ],
             [
@@ -601,47 +601,47 @@ class ProductElements
                 "product" => "CRBA1250"
             ],
             [
-                "filename" => "espinaca_1.png",
+                "filename" => "espinaca_1.jpg",
                 "product" => "SPNC1250"
             ],
             [
-                "filename" => "fresas_1.png",
+                "filename" => "fresas_1.jpg",
                 "product" => "FRSS3750"
             ],
             [
-                "filename" => "frijol_verde_1.png",
+                "filename" => "frijol_verde_1.jpg",
                 "product" => "FJLVRD6500"
             ],
             [
-                "filename" => "granadilla_1.png",
+                "filename" => "granadilla_1.jpg",
                 "product" => "GRNDLL3750"
             ],
             [
-                "filename" => "guanabana_1.png",
+                "filename" => "guanabana_1.jpg",
                 "product" => "GNBN2104"
             ],
             [
-                "filename" => "guayaba_1.png",
+                "filename" => "guayaba_1.jpg",
                 "product" => "GYB1750"
             ],
             [
-                "filename" => "habichuela_1.png",
+                "filename" => "habichuela_1.jpg",
                 "product" => "HBCHL1500"
             ],
             [
-                "filename" => "jengibre_1.png",
+                "filename" => "jengibre_1.jpg",
                 "product" => "JGBR6250"
             ],
             [
-                "filename" => "kiwi_1.png",
+                "filename" => "kiwi_1.jpg",
                 "product" => "KWBJA7500"
             ],
             [
-                "filename" => "lechuga_1.png",
+                "filename" => "lechuga_1.jpg",
                 "product" => "LCHGBTV1125"
             ],
             [
-                "filename" => "limon2.png",
+                "filename" => "limon2.jpg",
                 "product" => "LMNTHT875"
             ],
             [
@@ -653,27 +653,30 @@ class ProductElements
                 "product" => "MNDRNAARYN1250"
             ],
             [
-                "filename" => "mango_1.png",
+                "filename" => "mango_1.jpg",
                 "product" => "MNGCMN1875"
             ],
             [
-                "filename" => "mango_1.png",
+                "filename" => "mango_1.jpg",
                 "product" => "MNGTMMY1750"
             ],
             [
                 "filename" => "manzana_1.jpg",
-                "product" => "MZNRJA4375"
+                "product" => "MZNRJA4375",
+                "main" => false,
             ],
             [
-                "filename" => "manzana_roja_1.png",
-                "product" => "MZNRJA4375"
+                "filename" => "manzana_roja_1.jpg",
+                "product" => "MZNRJA4375",
+                "main" => true
             ],
             [
                 "filename" => "manzana_roja_2.jpg",
-                "product" => "MZNRJA4375"
+                "product" => "MZNRJA4375",
+                "main" => false,
             ],
             [
-                "filename" => "manzana_verde_1.png",
+                "filename" => "manzana_verde_1.jpg",
                 "product" => "MZNVRD4375"
             ],
             [
@@ -681,11 +684,11 @@ class ProductElements
                 "product" => "MRCY1750"
             ],
             [
-                "filename" => "mazorca_comun_1.png",
+                "filename" => "mazorca_comun_1.jpg",
                 "product" => "MZRC750"
             ],
             [
-                "filename" => "mazorca_dulce_1.png",
+                "filename" => "mazorca_dulce_1.jpg",
                 "product" => "CRNSWT1875"
             ],
             [
@@ -693,39 +696,39 @@ class ProductElements
                 "product" => "MLN1875"
             ],
             [
-                "filename" => "melon_1.png",
+                "filename" => "melon_1.jpg",
                 "product" => "MLN1875"
             ],
             [
-                "filename" => "mora_1.png",
+                "filename" => "mora_1.jpg",
                 "product" => "MRA2500"
             ],
             [
-                "filename" => "naranja_1.png",
+                "filename" => "naranja_1.jpg",
                 "product" => "NRJVLCIA875"
             ],
             [
-                "filename" => "papa_1.png",
+                "filename" => "papa_1.jpg",
                 "product" => "PPPRD1000"
             ],
             [
-                "filename" => "papaya_1.png",
+                "filename" => "papaya_1.jpg",
                 "product" => "PPYA875"
             ],
             [
-                "filename" => "pepino_1.png",
+                "filename" => "pepino_1.jpg",
                 "product" => "PPNO1000"
             ],
             [
-                "filename" => "pera_1.png",
+                "filename" => "pera_1.jpg",
                 "product" => "PRANAL875"
             ],
             [
-                "filename" => "pimenton_1.png",
+                "filename" => "pimenton_1.jpg",
                 "product" => "PMNTN1625"
             ],
             [
-                "filename" => "pina_1.png",
+                "filename" => "pina_1.jpg",
                 "product" => "PNAOM1250"
             ],
             [
@@ -733,55 +736,55 @@ class ProductElements
                 "product" => "PNAOM1250"
             ],
             [
-                "filename" => "pithaya_1.png",
+                "filename" => "pithaya_1.jpg",
                 "product" => "PTHYA5000"
             ],
             [
-                "filename" => "platano_guayabo_1.png",
+                "filename" => "platano_guayabo_1.jpg",
                 "product" => "PLTGYB1750"
             ],
             [
-                "filename" => "platano_maduro_1.png",
+                "filename" => "platano_maduro_1.jpg",
                 "product" => "PLTNMDR1250"
             ],
             [
-                "filename" => "platano_verde_1.png",
+                "filename" => "platano_verde_1.jpg",
                 "product" => "PLTNVRD1125"
             ],
             [
-                "filename" => "remolacha_1.png",
+                "filename" => "remolacha_1.jpg",
                 "product" => "RMLCH875"
             ],
             [
-                "filename" => "repollo_1.png",
+                "filename" => "repollo_1.jpg",
                 "product" => "RPLL1125"
             ],
             [
-                "filename" => "repollo_morado_1.png",
+                "filename" => "repollo_morado_1.jpg",
                 "product" => "RPLLMRD1375"
             ],
             [
-                "filename" => "sandia_1.png",
+                "filename" => "sandia_1.jpg",
                 "product" => "SNDA875"
             ],
             [
-                "filename" => "tomate_chonto_1.png",
+                "filename" => "tomate_chonto_1.jpg",
                 "product" => "TMTCHNT1500"
             ],
             [
-                "filename" => "tomate_de_arbol_1.png",
+                "filename" => "tomate_de_arbol_1.jpg",
                 "product" => "TMTRBL2000"
             ],
             [
-                "filename" => "uva_1.png",
+                "filename" => "uva_1.jpg",
                 "product" => "USBL1875"
             ],
             [
-                "filename" => "yuca_1.png",
+                "filename" => "yuca_1.jpg",
                 "product" => "YCA975"
             ],
             [
-                "filename" => "zanahoria_1.png",
+                "filename" => "zanahoria_1.jpg",
                 "product" => "ZNHR1625"
             ]
         ];

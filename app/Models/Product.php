@@ -66,4 +66,13 @@ class Product extends Model
     {
         return $this->actual_price * $quantity;
     }
+
+    public function getMainImageAttribute()
+    {
+        if($image = $this->images()->where("main", true)->first())
+            $fileName = $image->file_name;
+        else
+            $fileName = "img-na.jpg";
+        return "/img/product/".$fileName;
+    }
 }

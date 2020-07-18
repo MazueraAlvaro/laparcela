@@ -25,3 +25,11 @@ if (!function_exists('activeSession')) {
         return $session;
     }
 }
+
+if (!function_exists("formatMoneyNumber")){
+    function formatMoneyNumber($value = 0, $decimals = 2){
+        if($value === 0)
+            return 0;
+        return number_format($value, $decimals, ",", ".");
+    }
+}

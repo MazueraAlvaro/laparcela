@@ -32,7 +32,7 @@ class ProductQuantityRule implements Rule
     {
         if(!$this->product)
             return true;
-        return $value % $this->product->unit->increment === 0;
+        return ($value > 0 and ($value * 100) % ($this->product->unit->increment * 100) === 0);
     }
 
     /**

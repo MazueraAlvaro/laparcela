@@ -15,6 +15,7 @@ class ProductImageSeeder extends Seeder
         foreach ($images as $image){
             $imageObj = new \App\Models\ProductImage();
             $imageObj->file_name = $image["filename"];
+            $imageObj->main = isset($image["main"]) ? $image["main"] : true;
             $product = \App\Models\Product::where("sku", $image['product'])->first();
             $imageObj->product()->associate($product);
             $imageObj->save();

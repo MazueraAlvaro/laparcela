@@ -14,9 +14,12 @@ class ShoppingCartResource extends JsonResource
      */
     public function toArray($request)
     {
+        $total = $this->total;
         return [
             "id" => $this->id,
-            "products" => $this->whenLoaded("products", ProductShoppingCartResource::collection($this->products))
+            "products" => $this->whenLoaded("products", ProductShoppingCartResource::collection($this->products)),
+            "total" => $this->total,
+            "formatted_total" => "$".formatMoneyNumber($total),
         ];
     }
 }

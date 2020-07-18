@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ProductResource;
 use App\Models\Category;
 use App\Http\Resources\CategoryResource;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -61,7 +62,10 @@ class CategoryController extends Controller
 
     public function products($categoryId)
     {
-        $products = Category::findOrFail($categoryId)->products()->paginate();
+        if($categoryId === "0")
+            $products = Product::with(["unit", "images"])->paginate(12);
+        else
+            $products = Category::findOrFail($categoryId)->products()->with(["unit", "images"])->paginate(12);
         return ProductResource::collection($products);
     }
 

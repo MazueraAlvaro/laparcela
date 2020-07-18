@@ -17,6 +17,7 @@ class CreateProductImagesTable extends Migration
             $table->bigIncrements("id");
             $table->foreignId("product_id")->constrained();
             $table->string("file_name", 200);
+            $table->boolean("main")->default(false);
         });
     }
 

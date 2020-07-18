@@ -46,4 +46,15 @@ class Order extends Model
     {
         return $this->hasOne(OrderDetail::class);
     }
+
+    public function coupons()
+    {
+        return $this->belongsToMany(Coupon::class);
+    }
+
+    public function calcTotal()
+    {
+//        if(!$this->coupons()->exists())
+        $this->total = $this->subtotal;
+    }
 }
