@@ -19,11 +19,15 @@ const router = new VueRouter({
             name: "contact",
             component: require("./views/Shop.vue").default
         },
-
         {
             path: "/carro-de-compras",
             name: "cart",
             component: require("./views/Cart.vue").default
+        },
+        {
+            path: "/finalizar-pedido",
+            name: "checkout",
+            component: require("./views/Checkout.vue").default
         }
     ],
     mode: "history",

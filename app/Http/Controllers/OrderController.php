@@ -34,7 +34,7 @@ class OrderController extends Controller
         $session = activeSession(["shoppingCart"]);
         if(!$order){
             $number = $this->orderRepository->getNextOrderNumber();
-            $order = $session->orders()->create(["date" => now(), "total" => 0, "number" => $number]);
+            $order = $session->orders()->create(["date" => now(), "total" => 0, "number" => $number, "subtotal" => 0]);
         }
         if($order->products()->exists()){
             $order->products()->delete();

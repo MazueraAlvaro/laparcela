@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Order extends Model
 {
-    protected $fillable = ["date", "total", "number"];
+    protected $fillable = ["date", "total", "number", "subtotal"];
 
     protected $casts = [
         "date" => "date"

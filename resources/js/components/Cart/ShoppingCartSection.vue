@@ -41,7 +41,7 @@
                             <li>Subtotal <span v-text="totalF"></span></li>
                             <li>Total <span v-text="totalF"></span></li>
                         </ul>
-                        <a href="#" class="primary-btn">PROCESAR ORDEN</a>
+                        <router-link :to="{name:'checkout'}" class="primary-btn">PROCESAR ORDEN</router-link>
                     </div>
                 </div>
             </div>
