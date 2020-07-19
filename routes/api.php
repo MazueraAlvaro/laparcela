@@ -24,6 +24,8 @@ Route::group([
     Route::get('me', 'AuthController@me');
 });
 
+Route::apiResource("payment","PaymentController");
+
 Route::apiResource("category", "CategoryController");
 Route::get("/category/{id}/products", "CategoryController@products")->name("category.products");
 

@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Payment;
+use App\Http\Resources\PaymentResource;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return PaymentResource::collection(Payment::where('active', true)->get());
     }
 
     /**
