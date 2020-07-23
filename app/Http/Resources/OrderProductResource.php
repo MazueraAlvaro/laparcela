@@ -21,7 +21,8 @@ class OrderProductResource extends JsonResource
             "description" => $this->description,
             "price" => $this->price,
             "quantity" => $this->quantity,
-            "subtotal" => $this->subtotal
+            "subtotal" => $this->subtotal,
+            "unit" => $this->resource->unit
         ];
     }
 }

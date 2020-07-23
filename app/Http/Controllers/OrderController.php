@@ -48,6 +48,7 @@ class OrderController extends Controller
             $orderProduct->fill($product->toArray());
             $orderProduct->price = $product->actual_price;
             $orderProduct->quantity = $product->cartProduct->quantity;
+            $orderProduct->unit = $product->unit->name;
             $total += $orderProduct->calcSubtotal();
             $order->products()->save($orderProduct);
         }
@@ -80,9 +81,16 @@ class OrderController extends Controller
         return new OrderResource($order);
     }
 
-    public function show($orderId)
+    public function show($orderId = false)
     {
-        $order = $this->orderRepository->getActualOrder(true, ["products", "detail"]);
+        if($orderId){
+            $order = activeSession()
+                ->orders()
+                ->with(["products"])
+                ->where("closed", true)->findOrFail($orderId);
+        }else{
+            $order = $this->orderRepository->getActualOrder(true, ["products", "detail"]);
+        }
         return new OrderResource($order);
     }
 
@@ -117,6 +125,6 @@ class OrderController extends Controller
         $order->closed = true;
         $order->date = now();
         $order->save();
-        return response()->json(["data"=> true]);
+        return response()->json(["data"=> ["id" => $order->id]]);
     }
 }

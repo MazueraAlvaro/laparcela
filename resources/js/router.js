@@ -28,6 +28,12 @@ const router = new VueRouter({
             path: "/finalizar-pedido",
             name: "checkout",
             component: require("./views/Checkout.vue").default
+        },
+        {
+            path: "/orden-recibida/:order",
+            name: "checkout-ended",
+            component: require("./views/CheckoutEnded.vue").default,
+            props: true
         }
     ],
     mode: "history",

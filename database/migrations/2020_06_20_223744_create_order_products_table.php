@@ -21,6 +21,7 @@ class CreateOrderProductsTable extends Migration
             $table->text("description")->nullable();
             $table->float("price");
             $table->integer("quantity");
+            $table->string("unit", 100);
             $table->float("subtotal");
         });
     }

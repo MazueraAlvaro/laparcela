@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex, {Store} from "vuex";
 import products from "./modules/products";
 import shoppingCart from "./modules/shoppingCart";
+import order from "./modules/order";
 import {SET_CATEGORIES, SET_CATEGORY} from "./mutation-types";
 
 Vue.use(Vuex);
@@ -23,7 +24,8 @@ export default new Store({
     },
     modules: {
         products,
-        shoppingCart
+        shoppingCart,
+        order
     },
     actions: {
         async retrieveCategories({commit, dispatch}){

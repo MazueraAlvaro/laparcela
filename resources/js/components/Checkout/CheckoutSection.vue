@@ -21,6 +21,8 @@
 <script>
     import BillingForm from "./BillingForm";
     import CheckoutOrder from "./CheckoutOrder";
+    import {ORDER_FROM_CART} from "../../store/modules/order";
+    import {SC_RETRIEVE} from "../../store/modules/shoppingCart";
 
     export default {
         name: "CheckoutSection",
@@ -31,7 +33,7 @@
             }
         },
         mounted() {
-          axios.post("/api/order/fromCart");
+            this.$store.dispatch("order/"+ORDER_FROM_CART);
         },
         components: {CheckoutOrder, BillingForm},
         methods:{
@@ -45,8 +47,12 @@
             },
             async detailsSent(res){
                 try{
-                    await axios.post("/api/order/close", {payment_id: this.payment});
+                    const {data} = await axios.post("/api/order/close", {payment_id: this.payment});
+                    await this.$store.dispatch("shoppingCart/"+SC_RETRIEVE);
                     this.loading = false;
+                    await this.$router.push({name:"checkout-ended", params:{
+                            order: data.data.id
+                        }});
                 }
                 catch (e) {
 

@@ -24,7 +24,7 @@ class OrderRepository
 
     public function getNextOrderNumber()
     {
-        $lastOrder = Order::orderBy("number")->select("number")->first();
+        $lastOrder = Order::orderBy("number", "DESC")->select("number")->first();
         $lastOrder = (!$lastOrder) ? 0 : $lastOrder->number;
         return ++$lastOrder;
     }

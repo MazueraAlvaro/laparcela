@@ -34,7 +34,8 @@ Route::get("product/search/{term}", "ProductController@search")->name("product.s
 
 Route::post("order/fromCart", "OrderController@storeFromCart");
 Route::post("order/close", "OrderController@close");
-Route::apiResource("order", "OrderController")->except(["destroy"]);
+Route::apiResource("order", "OrderController")->except(["destroy", "show"]);
+Route::get("order/{order?}", "OrderController@show");
 
 Route::apiResource("orderProduct", "OrderProductController")->except(['index']);
 //

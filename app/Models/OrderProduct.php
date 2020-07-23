@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class OrderProduct extends Model
 {
-    protected $fillable = ["sku", "name", "description", "price", "quantity", "subtotal"];
+    protected $fillable = ["sku", "name", "description", "price", "quantity", "subtotal", "unit"];
     public $timestamps = false;
     public function order()
     {
